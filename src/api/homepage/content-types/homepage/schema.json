@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroBanner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.hero-banner"
+    }
+  }
+}
