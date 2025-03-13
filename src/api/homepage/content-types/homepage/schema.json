@@ -4,7 +4,8 @@
   "info": {
     "singularName": "homepage",
     "pluralName": "homepages",
-    "displayName": "homepage"
+    "displayName": "Homepage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,6 +15,26 @@
       "type": "component",
       "repeatable": false,
       "component": "homepage.hero-banner"
+    },
+    "aboutUs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.about-us-section"
+    },
+    "favoriteCourses": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.courses-section"
+    },
+    "FAQsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.fa-qs-section"
+    },
+    "CTASection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.cta-section"
     }
   }
 }

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_homepage_about_us_sections",
+  "info": {
+    "displayName": "About Us Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "widgets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.about-us"
+    }
+  }
+}
