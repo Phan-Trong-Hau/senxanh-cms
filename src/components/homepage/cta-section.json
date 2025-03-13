@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_homepage_cta_section_s",
+  "info": {
+    "displayName": "CTA Section "
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    }
+  }
+}

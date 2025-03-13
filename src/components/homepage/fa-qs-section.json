@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_homepage_fa_qs_sections",
+  "info": {
+    "displayName": "FAQs Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    }
+  }
+}
