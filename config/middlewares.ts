@@ -26,7 +26,18 @@ export default ({ env }) => [
       },
     },
   },
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      origin: [
+        'http://localhost:8080',
+        'http://senxanh.smiv.vn',
+        'https://senxanh.smiv.vn',
+      ],
+    },
+  },
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
