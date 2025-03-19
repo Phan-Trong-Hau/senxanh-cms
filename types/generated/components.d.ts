@@ -11,6 +11,17 @@ export interface CommonCta extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonFigure extends Struct.ComponentSchema {
+  collectionName: 'components_common_figures';
+  info: {
+    displayName: 'Figure';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface CommonIcon extends Struct.ComponentSchema {
   collectionName: 'components_common_icons';
   info: {
@@ -117,10 +128,67 @@ export interface HomepageHeroBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface IntroduceBanner extends Struct.ComponentSchema {
+  collectionName: 'components_introduce_banners';
+  info: {
+    displayName: 'Banner';
+  };
+  attributes: {
+    highlightTitle: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageInMobile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface IntroduceHeroBanner extends Struct.ComponentSchema {
+  collectionName: 'components_introduce_hero_banners';
+  info: {
+    displayName: 'Hero Banner';
+  };
+  attributes: {
+    background: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    backgroundInMobile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    description: Schema.Attribute.Text;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface IntroduceOverview extends Struct.ComponentSchema {
+  collectionName: 'components_introduce_overview_s';
+  info: {
+    displayName: 'Overview ';
+  };
+  attributes: {
+    figures: Schema.Attribute.Component<'common.figure', true>;
+    highlightTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface IntroducePartner extends Struct.ComponentSchema {
+  collectionName: 'components_introduce_partners';
+  info: {
+    displayName: 'Partner';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    partners: Schema.Attribute.Component<'common.icon', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'common.cta': CommonCta;
+      'common.figure': CommonFigure;
       'common.icon': CommonIcon;
       'homepage.about-us': HomepageAboutUs;
       'homepage.about-us-section': HomepageAboutUsSection;
@@ -129,6 +197,10 @@ declare module '@strapi/strapi' {
       'homepage.cta-section': HomepageCtaSection;
       'homepage.fa-qs-section': HomepageFaQsSection;
       'homepage.hero-banner': HomepageHeroBanner;
+      'introduce.banner': IntroduceBanner;
+      'introduce.hero-banner': IntroduceHeroBanner;
+      'introduce.overview': IntroduceOverview;
+      'introduce.partner': IntroducePartner;
     }
   }
 }
