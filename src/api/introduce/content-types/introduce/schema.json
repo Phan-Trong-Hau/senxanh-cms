@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "introduces",
+  "info": {
+    "singularName": "introduce",
+    "pluralName": "introduces",
+    "displayName": "Introduce"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroBanner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "introduce.hero-banner"
+    },
+    "overview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "introduce.overview"
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "introduce.banner"
+    },
+    "partnerSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "introduce.partner"
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
+    }
+  }
+}
