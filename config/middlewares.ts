@@ -31,6 +31,7 @@ export default ({ env }) => [
     config: {
       enabled: true,
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       origin: [
         'http://localhost:8080',
         'http://senxanh.smiv.vn',
