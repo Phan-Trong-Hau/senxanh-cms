@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "courses_pages",
+  "info": {
+    "singularName": "courses-page",
+    "pluralName": "courses-pages",
+    "displayName": "Courses Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroBanner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "courses.hero-banner"
+    },
+    "groupedCourses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "courses.courses"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "courses.benefits"
+    }
+  }
+}

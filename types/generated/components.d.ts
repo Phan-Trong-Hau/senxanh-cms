@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CommonContentCard extends Struct.ComponentSchema {
+  collectionName: 'components_common_content_cards';
+  info: {
+    displayName: 'Content Card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface CommonCta extends Struct.ComponentSchema {
   collectionName: 'components_common_ctas';
   info: {
@@ -30,6 +42,43 @@ export interface CommonIcon extends Struct.ComponentSchema {
   attributes: {
     href: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface CoursesBenefits extends Struct.ComponentSchema {
+  collectionName: 'components_courses_benefits';
+  info: {
+    displayName: 'Benefits';
+  };
+  attributes: {
+    bubbles: Schema.Attribute.Component<'common.figure', true>;
+    highlightTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CoursesCourses extends Struct.ComponentSchema {
+  collectionName: 'components_courses_courses';
+  info: {
+    displayName: 'Courses';
+  };
+  attributes: {
+    courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CoursesHeroBanner extends Struct.ComponentSchema {
+  collectionName: 'components_courses_hero_banners';
+  info: {
+    description: '';
+    displayName: 'Hero Banner';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    highlightTitle: Schema.Attribute.String;
+    infoBubbles: Schema.Attribute.Component<'common.content-card', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -187,9 +236,13 @@ export interface IntroducePartner extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'common.content-card': CommonContentCard;
       'common.cta': CommonCta;
       'common.figure': CommonFigure;
       'common.icon': CommonIcon;
+      'courses.benefits': CoursesBenefits;
+      'courses.courses': CoursesCourses;
+      'courses.hero-banner': CoursesHeroBanner;
       'homepage.about-us': HomepageAboutUs;
       'homepage.about-us-section': HomepageAboutUsSection;
       'homepage.courses': HomepageCourses;
