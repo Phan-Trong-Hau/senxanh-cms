@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_courses_hero_banners",
+  "info": {
+    "displayName": "Hero Banner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "highlightTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "infoBubbles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.content-card"
+    }
+  }
+}
