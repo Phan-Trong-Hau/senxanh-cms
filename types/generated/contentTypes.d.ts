@@ -590,6 +590,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
 export interface ApiIntroduceIntroduce extends Struct.SingleTypeSchema {
   collectionName: 'introduces';
   info: {
+    description: '';
     displayName: 'Introduce';
     pluralName: 'introduces';
     singularName: 'introduce';
@@ -616,6 +617,7 @@ export interface ApiIntroduceIntroduce extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::testimonial.testimonial'
     >;
+    titleTestimonial: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

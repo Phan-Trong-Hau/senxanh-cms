@@ -4,7 +4,8 @@
   "info": {
     "singularName": "introduce",
     "pluralName": "introduces",
-    "displayName": "Introduce"
+    "displayName": "Introduce",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,6 +35,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::testimonial.testimonial"
+    },
+    "titleTestimonial": {
+      "type": "string"
     }
   }
 }

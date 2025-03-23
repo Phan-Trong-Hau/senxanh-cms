@@ -170,8 +170,17 @@ export interface HomepageHeroBanner extends Struct.ComponentSchema {
     backgroundInMobile: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    clouds: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     description: Schema.Attribute.RichText;
+    heroShot: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     highlightTitle: Schema.Attribute.String;
+    icons: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
@@ -195,6 +204,7 @@ export interface IntroduceBanner extends Struct.ComponentSchema {
 export interface IntroduceHeroBanner extends Struct.ComponentSchema {
   collectionName: 'components_introduce_hero_banners';
   info: {
+    description: '';
     displayName: 'Hero Banner';
   };
   attributes: {
@@ -205,7 +215,14 @@ export interface IntroduceHeroBanner extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     description: Schema.Attribute.Text;
+    heroShot: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    highlightTitle: Schema.Attribute.String;
+    icons: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
