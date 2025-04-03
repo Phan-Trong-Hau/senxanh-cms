@@ -4,7 +4,8 @@
   "info": {
     "singularName": "fa-qs-page",
     "pluralName": "fa-qs-pages",
-    "displayName": "FAQs Page"
+    "displayName": "FAQs Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
