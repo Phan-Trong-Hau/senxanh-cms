@@ -493,6 +493,41 @@ export interface ApiDatasetDataset extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFaQsPageFaQsPage extends Struct.SingleTypeSchema {
+  collectionName: 'fa_qs_pages';
+  info: {
+    displayName: 'FAQs Page';
+    pluralName: 'fa-qs-pages';
+    singularName: 'fa-qs-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CTASection: Schema.Attribute.Component<'homepage.cta-section', false>;
+    FAQsSection: Schema.Attribute.Component<'homepage.fa-qs-section', false>;
+    heroBanner: Schema.Attribute.Component<'introduce.hero-banner', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fa-qs-page.fa-qs-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    testimonials: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
+    titleTestimonial: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -1167,6 +1202,7 @@ declare module '@strapi/strapi' {
       'api::course.course': ApiCourseCourse;
       'api::courses-page.courses-page': ApiCoursesPageCoursesPage;
       'api::dataset.dataset': ApiDatasetDataset;
+      'api::fa-qs-page.fa-qs-page': ApiFaQsPageFaQsPage;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::homepage.homepage': ApiHomepageHomepage;

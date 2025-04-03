@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "fa_qs_pages",
+  "info": {
+    "singularName": "fa-qs-page",
+    "pluralName": "fa-qs-pages",
+    "displayName": "FAQs Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroBanner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "introduce.hero-banner"
+    },
+    "FAQsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.fa-qs-section"
+    },
+    "titleTestimonial": {
+      "type": "string"
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
+    },
+    "CTASection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.cta-section"
+    }
+  }
+}
