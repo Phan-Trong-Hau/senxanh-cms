@@ -496,6 +496,7 @@ export interface ApiDatasetDataset extends Struct.CollectionTypeSchema {
 export interface ApiFaQsPageFaQsPage extends Struct.SingleTypeSchema {
   collectionName: 'fa_qs_pages';
   info: {
+    description: '';
     displayName: 'FAQs Page';
     pluralName: 'fa-qs-pages';
     singularName: 'fa-qs-page';
