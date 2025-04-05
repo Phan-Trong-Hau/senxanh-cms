@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "news_pages",
+  "info": {
+    "singularName": "news-page",
+    "pluralName": "news-pages",
+    "displayName": "News Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "highlightNewspapers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::newspaper.newspaper"
+    }
+  }
+}
