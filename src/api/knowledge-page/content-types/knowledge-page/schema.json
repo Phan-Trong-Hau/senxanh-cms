@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "knowledge_pages",
+  "info": {
+    "singularName": "knowledge-page",
+    "pluralName": "knowledge-pages",
+    "displayName": "Knowledge Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroBanner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "introduce.hero-banner"
+    },
+    "tabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "knowledge.tabs"
+    }
+  }
+}
