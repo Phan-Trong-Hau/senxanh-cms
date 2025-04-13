@@ -60,10 +60,12 @@ export interface CoursesBenefits extends Struct.ComponentSchema {
 export interface CoursesCourses extends Struct.ComponentSchema {
   collectionName: 'components_courses_courses';
   info: {
+    description: '';
     displayName: 'Courses';
   };
   attributes: {
     courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
+    key: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -90,6 +92,7 @@ export interface HomepageAboutUs extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.RichText;
+    key: Schema.Attribute.String;
     label: Schema.Attribute.String;
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
@@ -250,6 +253,28 @@ export interface IntroducePartner extends Struct.ComponentSchema {
   };
 }
 
+export interface KnowledgeTabs extends Struct.ComponentSchema {
+  collectionName: 'components_knowledge_tabs';
+  info: {
+    displayName: 'Tabs';
+  };
+  attributes: {
+    articles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::newspaper.newspaper'
+    >;
+    courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
+    highlightArticles: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::newspaper.newspaper'
+    >;
+    key: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    titleArticles: Schema.Attribute.String;
+    titleCourses: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -271,6 +296,7 @@ declare module '@strapi/strapi' {
       'introduce.hero-banner': IntroduceHeroBanner;
       'introduce.overview': IntroduceOverview;
       'introduce.partner': IntroducePartner;
+      'knowledge.tabs': KnowledgeTabs;
     }
   }
 }

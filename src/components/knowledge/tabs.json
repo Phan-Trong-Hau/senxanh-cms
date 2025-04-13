@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_knowledge_tabs",
+  "info": {
+    "displayName": "Tabs"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "titleCourses": {
+      "type": "string"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course"
+    },
+    "titleArticles": {
+      "type": "string"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::newspaper.newspaper"
+    },
+    "highlightArticles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::newspaper.newspaper"
+    }
+  }
+}

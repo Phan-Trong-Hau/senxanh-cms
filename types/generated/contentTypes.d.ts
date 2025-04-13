@@ -461,6 +461,45 @@ export interface ApiCoursesPageCoursesPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCustomerPageCustomerPage extends Struct.SingleTypeSchema {
+  collectionName: 'customer_pages';
+  info: {
+    description: '';
+    displayName: 'Customer Page';
+    pluralName: 'customer-pages';
+    singularName: 'customer-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    groupedCourses: Schema.Attribute.Component<'courses.courses', false>;
+    highlightCustomers: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::newspaper.newspaper'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::customer-page.customer-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    testimonials: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
+    title: Schema.Attribute.String;
+    titleTestimonial: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDatasetDataset extends Struct.CollectionTypeSchema {
   collectionName: 'datasets';
   info: {
@@ -660,9 +699,39 @@ export interface ApiIntroduceIntroduce extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
+  collectionName: 'knowledge_pages';
+  info: {
+    displayName: 'Knowledge Page';
+    pluralName: 'knowledge-pages';
+    singularName: 'knowledge-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroBanner: Schema.Attribute.Component<'introduce.hero-banner', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::knowledge-page.knowledge-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'knowledge.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
   collectionName: 'news_pages';
   info: {
+    description: '';
     displayName: 'News Page';
     pluralName: 'news-pages';
     singularName: 'news-page';
@@ -674,6 +743,7 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    groupedCourses: Schema.Attribute.Component<'courses.courses', false>;
     highlightNewspapers: Schema.Attribute.Relation<
       'oneToMany',
       'api::newspaper.newspaper'
@@ -685,6 +755,7 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -694,6 +765,7 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
 export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
   collectionName: 'newspapers';
   info: {
+    description: '';
     displayName: 'Newspaper';
     pluralName: 'newspapers';
     singularName: 'newspaper';
@@ -718,7 +790,9 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'title'>;
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['News', 'Customer']>;
+    type: Schema.Attribute.Enumeration<
+      ['News', 'Customer', 'Skill', 'Training']
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1268,12 +1342,14 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::course.course': ApiCourseCourse;
       'api::courses-page.courses-page': ApiCoursesPageCoursesPage;
+      'api::customer-page.customer-page': ApiCustomerPageCustomerPage;
       'api::dataset.dataset': ApiDatasetDataset;
       'api::fa-qs-page.fa-qs-page': ApiFaQsPageFaQsPage;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::introduce.introduce': ApiIntroduceIntroduce;
+      'api::knowledge-page.knowledge-page': ApiKnowledgePageKnowledgePage;
       'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::newspaper.newspaper': ApiNewspaperNewspaper;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

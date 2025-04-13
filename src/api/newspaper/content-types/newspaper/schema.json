@@ -4,7 +4,8 @@
   "info": {
     "singularName": "newspaper",
     "pluralName": "newspapers",
-    "displayName": "Newspaper"
+    "displayName": "Newspaper",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,14 +18,15 @@
       "type": "text"
     },
     "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "url": {
       "type": "string"
@@ -40,18 +42,21 @@
       "type": "enumeration",
       "enum": [
         "News",
-        "Customer"
+        "Customer",
+        "Skill",
+        "Training"
       ]
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

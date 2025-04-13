@@ -1,17 +1,20 @@
 {
   "kind": "singleType",
-  "collectionName": "news_pages",
+  "collectionName": "customer_pages",
   "info": {
-    "singularName": "news-page",
-    "pluralName": "news-pages",
-    "displayName": "News Page",
+    "singularName": "customer-page",
+    "pluralName": "customer-pages",
+    "displayName": "Customer Page",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "highlightNewspapers": {
+    "title": {
+      "type": "string"
+    },
+    "highlightCustomers": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::newspaper.newspaper"
@@ -21,8 +24,13 @@
       "repeatable": false,
       "component": "courses.courses"
     },
-    "title": {
+    "titleTestimonial": {
       "type": "string"
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
     }
   }
 }
