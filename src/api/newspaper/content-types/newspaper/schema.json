@@ -41,10 +41,10 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "News",
-        "Customer",
-        "Skill",
-        "Training"
+        "Tin tức",
+        "Khách hàng",
+        "Vườn kỹ năng",
+        "Huấn luyện cá nhân"
       ]
     },
     "logo": {

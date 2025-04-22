@@ -402,6 +402,7 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
 export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   collectionName: 'courses';
   info: {
+    description: '';
     displayName: 'Course';
     pluralName: 'courses';
     singularName: 'course';
@@ -410,9 +411,16 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    contents: Schema.Attribute.Component<'courses.block-editor', true>;
+    coursesRelated: Schema.Attribute.Component<
+      'homepage.courses-section',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    CTASection: Schema.Attribute.Component<'homepage.cta-section', false>;
     description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -503,7 +511,8 @@ export interface ApiCustomerPageCustomerPage extends Struct.SingleTypeSchema {
 export interface ApiDatasetDataset extends Struct.CollectionTypeSchema {
   collectionName: 'datasets';
   info: {
-    displayName: 'Dataset';
+    description: '';
+    displayName: 'Customer Data';
     pluralName: 'datasets';
     singularName: 'dataset';
   };
@@ -639,6 +648,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
   attributes: {
     aboutUs: Schema.Attribute.Component<'homepage.about-us-section', false>;
+    articles: Schema.Attribute.Component<'homepage.articles', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -791,7 +801,12 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
-      ['News', 'Customer', 'Skill', 'Training']
+      [
+        'Tin t\u1EE9c',
+        'Kh\u00E1ch h\u00E0ng',
+        'V\u01B0\u1EDDn k\u1EF9 n\u0103ng',
+        'Hu\u1EA5n luy\u1EC7n c\u00E1 nh\u00E2n',
+      ]
     >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

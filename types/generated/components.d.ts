@@ -57,6 +57,18 @@ export interface CoursesBenefits extends Struct.ComponentSchema {
   };
 }
 
+export interface CoursesBlockEditor extends Struct.ComponentSchema {
+  collectionName: 'components_courses_block_editors';
+  info: {
+    displayName: 'Block Editor';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    isImageLeft: Schema.Attribute.Boolean;
+  };
+}
+
 export interface CoursesCourses extends Struct.ComponentSchema {
   collectionName: 'components_courses_courses';
   info: {
@@ -107,6 +119,21 @@ export interface HomepageAboutUsSection extends Struct.ComponentSchema {
   attributes: {
     title: Schema.Attribute.String;
     widgets: Schema.Attribute.Component<'homepage.about-us', true>;
+  };
+}
+
+export interface HomepageArticles extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_articles';
+  info: {
+    displayName: 'Articles';
+  };
+  attributes: {
+    highlightTitle: Schema.Attribute.String;
+    newspapers: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::newspaper.newspaper'
+    >;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -283,10 +310,12 @@ declare module '@strapi/strapi' {
       'common.figure': CommonFigure;
       'common.icon': CommonIcon;
       'courses.benefits': CoursesBenefits;
+      'courses.block-editor': CoursesBlockEditor;
       'courses.courses': CoursesCourses;
       'courses.hero-banner': CoursesHeroBanner;
       'homepage.about-us': HomepageAboutUs;
       'homepage.about-us-section': HomepageAboutUsSection;
+      'homepage.articles': HomepageArticles;
       'homepage.courses': HomepageCourses;
       'homepage.courses-section': HomepageCoursesSection;
       'homepage.cta-section': HomepageCtaSection;

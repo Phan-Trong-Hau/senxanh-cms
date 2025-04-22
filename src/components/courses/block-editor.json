@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_courses_block_editors",
+  "info": {
+    "displayName": "Block Editor"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "isImageLeft": {
+      "type": "boolean"
+    }
+  }
+}
