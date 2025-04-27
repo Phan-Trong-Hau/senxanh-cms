@@ -57,6 +57,19 @@
         "videos",
         "audios"
       ]
+    },
+    "relatedArticles": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.articles"
+    },
+    "titleCourses": {
+      "type": "string"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course"
     }
   }
 }

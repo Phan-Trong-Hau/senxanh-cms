@@ -53,10 +53,18 @@
       "repeatable": false,
       "component": "homepage.cta-section"
     },
-    "coursesRelated": {
+    "titleRelatedCourses": {
+      "type": "string"
+    },
+    "relatedCourses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course"
+    },
+    "articles": {
       "type": "component",
       "repeatable": false,
-      "component": "homepage.courses-section"
+      "component": "homepage.articles"
     }
   }
 }
