@@ -4,7 +4,7 @@
   "info": {
     "singularName": "dataset",
     "pluralName": "datasets",
-    "displayName": "Customer Data",
+    "displayName": "Customer Data (Dữ liệu khi có khách đăng ký form)",
     "description": ""
   },
   "options": {

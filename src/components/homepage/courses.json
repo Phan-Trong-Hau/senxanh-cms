@@ -1,40 +1,47 @@
 {
   "collectionName": "components_homepage_courses",
   "info": {
-    "displayName": "Courses"
+    "displayName": "Courses",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
-    },
     "heroShot": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "heroShotInMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "cta": {
       "type": "component",
       "repeatable": false,
       "component": "common.cta"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultMarkdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

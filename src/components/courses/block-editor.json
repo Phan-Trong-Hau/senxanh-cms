@@ -1,25 +1,31 @@
 {
   "collectionName": "components_courses_block_editors",
   "info": {
-    "displayName": "Block Editor"
+    "displayName": "Block Editor",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "content": {
-      "type": "richtext"
-    },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "isImageLeft": {
       "type": "boolean"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultMarkdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

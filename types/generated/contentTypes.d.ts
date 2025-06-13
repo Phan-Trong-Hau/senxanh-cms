@@ -372,7 +372,8 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiContactContact extends Struct.CollectionTypeSchema {
   collectionName: 'contacts';
   info: {
-    displayName: 'Contact';
+    description: '';
+    displayName: 'Contact (Li\u00EAn h\u1EC7 - c\u00E1c n\u00FAt g\u00F3c ph\u1EA3i)';
     pluralName: 'contacts';
     singularName: 'contact';
   };
@@ -403,7 +404,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   collectionName: 'courses';
   info: {
     description: '';
-    displayName: 'Course';
+    displayName: 'Course (Kh\u00F3a h\u1ECDc chi ti\u1EBFt)';
     pluralName: 'courses';
     singularName: 'course';
   };
@@ -444,7 +445,7 @@ export interface ApiCoursesPageCoursesPage extends Struct.SingleTypeSchema {
   collectionName: 'courses_pages';
   info: {
     description: '';
-    displayName: 'Courses Page';
+    displayName: 'Courses Page (C\u00E1c kh\u00F3a h\u1ECDc)';
     pluralName: 'courses-pages';
     singularName: 'courses-page';
   };
@@ -475,7 +476,7 @@ export interface ApiCustomerPageCustomerPage extends Struct.SingleTypeSchema {
   collectionName: 'customer_pages';
   info: {
     description: '';
-    displayName: 'Customer Page';
+    displayName: 'Customer Page (Trang kh\u00E1ch h\u00E0ng)';
     pluralName: 'customer-pages';
     singularName: 'customer-page';
   };
@@ -514,7 +515,7 @@ export interface ApiDatasetDataset extends Struct.CollectionTypeSchema {
   collectionName: 'datasets';
   info: {
     description: '';
-    displayName: 'Customer Data';
+    displayName: 'Customer Data (D\u1EEF li\u1EC7u khi c\u00F3 kh\u00E1ch \u0111\u0103ng k\u00FD form)';
     pluralName: 'datasets';
     singularName: 'dataset';
   };
@@ -547,7 +548,7 @@ export interface ApiFaQsPageFaQsPage extends Struct.SingleTypeSchema {
   collectionName: 'fa_qs_pages';
   info: {
     description: '';
-    displayName: 'FAQs Page';
+    displayName: 'FAQs Page (H\u1ECFi \u0111\u00E1p)';
     pluralName: 'fa-qs-pages';
     singularName: 'fa-qs-page';
   };
@@ -582,7 +583,8 @@ export interface ApiFaQsPageFaQsPage extends Struct.SingleTypeSchema {
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
-    displayName: 'FAQ';
+    description: '';
+    displayName: 'FAQ (Danh s\u00E1ch c\u00E1c c\u00E2u h\u1ECFi \u0111\u00E1p)';
     pluralName: 'faqs';
     singularName: 'faq';
   };
@@ -593,7 +595,13 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
       Schema.Attribute.Private;
@@ -609,7 +617,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
     description: '';
-    displayName: 'Footer';
+    displayName: 'Footer (Ch\u00E2n trang)';
     pluralName: 'footers';
     singularName: 'footer';
   };
@@ -641,7 +649,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
     description: '';
-    displayName: 'Homepage';
+    displayName: 'Homepage (Trang ch\u1EE7)';
     pluralName: 'homepages';
     singularName: 'homepage';
   };
@@ -678,7 +686,7 @@ export interface ApiIntroduceIntroduce extends Struct.SingleTypeSchema {
   collectionName: 'introduces';
   info: {
     description: '';
-    displayName: 'Introduce';
+    displayName: 'Introduce (Gi\u1EDBi thi\u1EC7u)';
     pluralName: 'introduces';
     singularName: 'introduce';
   };
@@ -714,7 +722,8 @@ export interface ApiIntroduceIntroduce extends Struct.SingleTypeSchema {
 export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
   collectionName: 'knowledge_pages';
   info: {
-    displayName: 'Knowledge Page';
+    description: '';
+    displayName: 'Knowledge Page (Ki\u1EBFn th\u1EE9c xanh)';
     pluralName: 'knowledge-pages';
     singularName: 'knowledge-page';
   };
@@ -744,7 +753,7 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
   collectionName: 'news_pages';
   info: {
     description: '';
-    displayName: 'News Page';
+    displayName: 'News Page (Tin t\u1EE9c)';
     pluralName: 'news-pages';
     singularName: 'news-page';
   };
@@ -778,7 +787,7 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
   collectionName: 'newspapers';
   info: {
     description: '';
-    displayName: 'Newspaper';
+    displayName: 'Newspaper (B\u00E0i vi\u1EBFt chi ti\u1EBFt - tin t\u1EE9c, kh\u00E1ch h\u00E0ng, ki\u1EBFn th\u1EE9c xanh, v\u01B0\u1EDDn k\u0129 n\u0103ng)';
     pluralName: 'newspapers';
     singularName: 'newspaper';
   };
@@ -786,7 +795,13 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.RichText;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
     courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -803,7 +818,7 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     relatedArticles: Schema.Attribute.Component<'homepage.articles', false>;
     slug: Schema.Attribute.UID<'title'>;
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     titleCourses: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
       [
@@ -812,7 +827,8 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
         'V\u01B0\u1EDDn k\u1EF9 n\u0103ng',
         'Hu\u1EA5n luy\u1EC7n c\u00E1 nh\u00E2n',
       ]
-    >;
+    > &
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -823,7 +839,8 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
 export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
-    displayName: 'Testimonial';
+    description: '';
+    displayName: 'Testimonial (Chia s\u1EBD c\u1EE7a ph\u1EE5 huynh)';
     pluralName: 'testimonials';
     singularName: 'testimonial';
   };
@@ -831,7 +848,13 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.RichText;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

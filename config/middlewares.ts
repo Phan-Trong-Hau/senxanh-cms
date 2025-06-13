@@ -34,8 +34,8 @@ export default ({ env }) => [
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       origin: [
         'http://localhost:8080',
-        'http://senxanh.smiv.vn',
-        'https://senxanh.smiv.vn',
+        'http://senxanh.com.vn',
+        'https://senxanh.com.vn',
       ],
     },
   },
