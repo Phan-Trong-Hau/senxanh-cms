@@ -4,7 +4,7 @@
   "info": {
     "singularName": "newspaper",
     "pluralName": "newspapers",
-    "displayName": "Newspaper",
+    "displayName": "Newspaper (Bài viết chi tiết - tin tức, khách hàng, kiến thức xanh, vườn kĩ năng)",
     "description": ""
   },
   "options": {
@@ -12,7 +12,8 @@
   },
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
       "type": "text"
@@ -35,9 +36,6 @@
       "type": "uid",
       "targetField": "title"
     },
-    "content": {
-      "type": "richtext"
-    },
     "type": {
       "type": "enumeration",
       "enum": [
@@ -45,7 +43,8 @@
         "Khách hàng",
         "Vườn kỹ năng",
         "Huấn luyện cá nhân"
-      ]
+      ],
+      "required": true
     },
     "logo": {
       "type": "media",
@@ -70,6 +69,13 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::course.course"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultMarkdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

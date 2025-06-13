@@ -60,10 +60,17 @@ export interface CoursesBenefits extends Struct.ComponentSchema {
 export interface CoursesBlockEditor extends Struct.ComponentSchema {
   collectionName: 'components_courses_block_editors';
   info: {
+    description: '';
     displayName: 'Block Editor';
   };
   attributes: {
-    content: Schema.Attribute.RichText;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     isImageLeft: Schema.Attribute.Boolean;
   };
@@ -103,7 +110,13 @@ export interface HomepageAboutUs extends Struct.ComponentSchema {
     displayName: 'Widget';
   };
   attributes: {
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
     key: Schema.Attribute.String;
     label: Schema.Attribute.String;
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -140,11 +153,18 @@ export interface HomepageArticles extends Struct.ComponentSchema {
 export interface HomepageCourses extends Struct.ComponentSchema {
   collectionName: 'components_homepage_courses';
   info: {
+    description: '';
     displayName: 'Courses';
   };
   attributes: {
     cta: Schema.Attribute.Component<'common.cta', false>;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
     heroShot: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     heroShotInMobile: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -204,7 +224,13 @@ export interface HomepageHeroBanner extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
     heroShot: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     highlightTitle: Schema.Attribute.String;
     icons: Schema.Attribute.Media<

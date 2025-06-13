@@ -4,7 +4,8 @@
   "info": {
     "singularName": "faq",
     "pluralName": "faqs",
-    "displayName": "FAQ"
+    "displayName": "FAQ (Danh sách các câu hỏi đáp)",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,11 @@
       "type": "string"
     },
     "description": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "defaultMarkdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
