@@ -787,7 +787,7 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
   collectionName: 'newspapers';
   info: {
     description: '';
-    displayName: 'Newspaper (B\u00E0i vi\u1EBFt chi ti\u1EBFt - tin t\u1EE9c, kh\u00E1ch h\u00E0ng, ki\u1EBFn th\u1EE9c xanh, v\u01B0\u1EDDn k\u0129 n\u0103ng)';
+    displayName: 'Newspaper (B\u00E0i vi\u1EBFt chi ti\u1EBFt - V\u01B0\u1EDDn k\u1EF9 n\u0103ng, Hu\u1EA5n luy\u1EC7n c\u00E1 nh\u00E2n, B\u00E1o ch\u00ED, Kh\u00E1ch h\u00E0ng)';
     pluralName: 'newspapers';
     singularName: 'newspaper';
   };
@@ -822,10 +822,10 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     titleCourses: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
       [
-        'Tin t\u1EE9c',
-        'Kh\u00E1ch h\u00E0ng',
         'V\u01B0\u1EDDn k\u1EF9 n\u0103ng',
         'Hu\u1EA5n luy\u1EC7n c\u00E1 nh\u00E2n',
+        'B\u00E1o ch\u00ED',
+        'Kh\u00E1ch h\u00E0ng',
       ]
     > &
       Schema.Attribute.Required;
