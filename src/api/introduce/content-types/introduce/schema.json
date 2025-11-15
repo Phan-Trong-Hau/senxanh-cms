@@ -4,32 +4,33 @@
   "info": {
     "singularName": "introduce",
     "pluralName": "introduces",
-    "displayName": "Introduce (Giới thiệu)",
+    "displayName": "Trang giới thiệu",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "heroBanner": {
       "type": "component",
-      "repeatable": false,
-      "component": "introduce.hero-banner"
+      "component": "introduce.hero-banner",
+      "repeatable": false
     },
     "overview": {
       "type": "component",
-      "repeatable": false,
-      "component": "introduce.overview"
+      "component": "introduce.overview",
+      "repeatable": false
     },
     "banner": {
       "type": "component",
-      "repeatable": false,
-      "component": "introduce.banner"
+      "component": "introduce.banner",
+      "repeatable": false
     },
     "partnerSection": {
       "type": "component",
-      "repeatable": false,
-      "component": "introduce.partner"
+      "component": "introduce.partner",
+      "repeatable": false
     },
     "testimonials": {
       "type": "relation",

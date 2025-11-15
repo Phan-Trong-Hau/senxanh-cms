@@ -4,27 +4,28 @@
   "info": {
     "singularName": "courses-page",
     "pluralName": "courses-pages",
-    "displayName": "Courses Page (Các khóa học)",
+    "displayName": "Trang khóa học",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "heroBanner": {
       "type": "component",
-      "repeatable": false,
-      "component": "courses.hero-banner"
+      "component": "courses.hero-banner",
+      "repeatable": false
     },
     "groupedCourses": {
       "type": "component",
-      "repeatable": true,
-      "component": "courses.courses"
+      "component": "courses.courses",
+      "repeatable": true
     },
     "benefits": {
       "type": "component",
-      "repeatable": false,
-      "component": "courses.benefits"
+      "component": "courses.benefits",
+      "repeatable": false
     }
   }
 }

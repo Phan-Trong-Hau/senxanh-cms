@@ -4,12 +4,13 @@
   "info": {
     "singularName": "dataset",
     "pluralName": "datasets",
-    "displayName": "Customer Data (Dữ liệu khi có khách đăng ký form)",
+    "displayName": "Dữ liệu khách đăng ký",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string"

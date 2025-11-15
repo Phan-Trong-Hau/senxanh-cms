@@ -4,12 +4,13 @@
   "info": {
     "singularName": "customer-page",
     "pluralName": "customer-pages",
-    "displayName": "Customer Page (Trang khách hàng)",
+    "displayName": "Trang khách hàng",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string"
@@ -21,8 +22,8 @@
     },
     "groupedCourses": {
       "type": "component",
-      "repeatable": false,
-      "component": "courses.courses"
+      "component": "courses.courses",
+      "repeatable": false
     },
     "titleTestimonial": {
       "type": "string"

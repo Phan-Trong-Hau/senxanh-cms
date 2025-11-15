@@ -4,12 +4,13 @@
   "info": {
     "singularName": "course",
     "pluralName": "courses",
-    "displayName": "Course (Khóa học chi tiết)",
+    "displayName": "Khóa học chi tiết",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string"
@@ -34,8 +35,8 @@
     },
     "contents": {
       "type": "component",
-      "repeatable": true,
-      "component": "courses.block-editor"
+      "component": "courses.block-editor",
+      "repeatable": true
     },
     "banner": {
       "type": "media",
@@ -50,8 +51,8 @@
     },
     "CTASection": {
       "type": "component",
-      "repeatable": false,
-      "component": "homepage.cta-section"
+      "component": "homepage.cta-section",
+      "repeatable": false
     },
     "titleRelatedCourses": {
       "type": "string"
@@ -63,8 +64,8 @@
     },
     "articles": {
       "type": "component",
-      "repeatable": false,
-      "component": "homepage.articles"
+      "component": "homepage.articles",
+      "repeatable": false
     }
   }
 }

@@ -4,12 +4,13 @@
   "info": {
     "singularName": "footer",
     "pluralName": "footers",
-    "displayName": "Footer (Chân trang)",
+    "displayName": "Chân trang",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "logo": {
       "type": "media",
@@ -24,13 +25,13 @@
     },
     "social": {
       "type": "component",
-      "repeatable": true,
-      "component": "common.icon"
+      "component": "common.icon",
+      "repeatable": true
     },
     "contacts": {
       "type": "component",
-      "repeatable": true,
-      "component": "common.cta"
+      "component": "common.cta",
+      "repeatable": true
     },
     "copyright": {
       "type": "string"

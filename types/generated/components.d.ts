@@ -42,6 +42,7 @@ export interface CommonIcon extends Struct.ComponentSchema {
   attributes: {
     href: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
