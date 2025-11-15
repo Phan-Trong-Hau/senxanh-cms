@@ -4,12 +4,13 @@
   "info": {
     "singularName": "contact",
     "pluralName": "contacts",
-    "displayName": "Contact (Liên hệ - các nút góc phải)",
+    "displayName": "Liên hệ - các nút góc phải",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string"

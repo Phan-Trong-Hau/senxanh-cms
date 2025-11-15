@@ -377,7 +377,7 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
   collectionName: 'contacts';
   info: {
     description: '';
-    displayName: 'Contact (Li\u00EAn h\u1EC7 - c\u00E1c n\u00FAt g\u00F3c ph\u1EA3i)';
+    displayName: 'Li\u00EAn h\u1EC7 - c\u00E1c n\u00FAt g\u00F3c ph\u1EA3i';
     pluralName: 'contacts';
     singularName: 'contact';
   };
@@ -408,7 +408,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   collectionName: 'courses';
   info: {
     description: '';
-    displayName: 'Course (Kh\u00F3a h\u1ECDc chi ti\u1EBFt)';
+    displayName: 'Kh\u00F3a h\u1ECDc chi ti\u1EBFt';
     pluralName: 'courses';
     singularName: 'course';
   };
@@ -449,7 +449,7 @@ export interface ApiCoursesPageCoursesPage extends Struct.SingleTypeSchema {
   collectionName: 'courses_pages';
   info: {
     description: '';
-    displayName: 'Courses Page (C\u00E1c kh\u00F3a h\u1ECDc)';
+    displayName: 'Trang kh\u00F3a h\u1ECDc';
     pluralName: 'courses-pages';
     singularName: 'courses-page';
   };
@@ -480,7 +480,7 @@ export interface ApiCustomerPageCustomerPage extends Struct.SingleTypeSchema {
   collectionName: 'customer_pages';
   info: {
     description: '';
-    displayName: 'Customer Page (Trang kh\u00E1ch h\u00E0ng)';
+    displayName: 'Trang kh\u00E1ch h\u00E0ng';
     pluralName: 'customer-pages';
     singularName: 'customer-page';
   };
@@ -519,7 +519,7 @@ export interface ApiDatasetDataset extends Struct.CollectionTypeSchema {
   collectionName: 'datasets';
   info: {
     description: '';
-    displayName: 'Customer Data (D\u1EEF li\u1EC7u khi c\u00F3 kh\u00E1ch \u0111\u0103ng k\u00FD form)';
+    displayName: 'D\u1EEF li\u1EC7u kh\u00E1ch \u0111\u0103ng k\u00FD';
     pluralName: 'datasets';
     singularName: 'dataset';
   };
@@ -552,7 +552,7 @@ export interface ApiFaQsPageFaQsPage extends Struct.SingleTypeSchema {
   collectionName: 'fa_qs_pages';
   info: {
     description: '';
-    displayName: 'FAQs Page (H\u1ECFi \u0111\u00E1p)';
+    displayName: 'Trang h\u1ECFi \u0111\u00E1p ';
     pluralName: 'fa-qs-pages';
     singularName: 'fa-qs-page';
   };
@@ -588,7 +588,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
     description: '';
-    displayName: 'FAQ (Danh s\u00E1ch c\u00E1c c\u00E2u h\u1ECFi \u0111\u00E1p)';
+    displayName: 'Danh s\u00E1ch c\u00E1c c\u00E2u h\u1ECFi - FAQs';
     pluralName: 'faqs';
     singularName: 'faq';
   };
@@ -621,7 +621,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
     description: '';
-    displayName: 'Footer (Ch\u00E2n trang)';
+    displayName: 'Ch\u00E2n trang';
     pluralName: 'footers';
     singularName: 'footer';
   };
@@ -653,7 +653,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
     description: '';
-    displayName: 'Homepage (Trang ch\u1EE7)';
+    displayName: 'Trang ch\u1EE7';
     pluralName: 'homepages';
     singularName: 'homepage';
   };
@@ -690,7 +690,7 @@ export interface ApiIntroduceIntroduce extends Struct.SingleTypeSchema {
   collectionName: 'introduces';
   info: {
     description: '';
-    displayName: 'Introduce (Gi\u1EDBi thi\u1EC7u)';
+    displayName: 'Trang gi\u1EDBi thi\u1EC7u';
     pluralName: 'introduces';
     singularName: 'introduce';
   };
@@ -727,7 +727,7 @@ export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
   collectionName: 'knowledge_pages';
   info: {
     description: '';
-    displayName: 'Knowledge Page (Ki\u1EBFn th\u1EE9c xanh)';
+    displayName: 'Trang ki\u1EBFn th\u1EE9c xanh';
     pluralName: 'knowledge-pages';
     singularName: 'knowledge-page';
   };
@@ -757,7 +757,7 @@ export interface ApiNewsPageNewsPage extends Struct.SingleTypeSchema {
   collectionName: 'news_pages';
   info: {
     description: '';
-    displayName: 'News Page (Tin t\u1EE9c)';
+    displayName: 'Trang tin t\u1EE9c';
     pluralName: 'news-pages';
     singularName: 'news-page';
   };
@@ -791,7 +791,7 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
   collectionName: 'newspapers';
   info: {
     description: '';
-    displayName: 'Newspaper (B\u00E0i vi\u1EBFt chi ti\u1EBFt - V\u01B0\u1EDDn k\u1EF9 n\u0103ng, Hu\u1EA5n luy\u1EC7n c\u00E1 nh\u00E2n, B\u00E1o ch\u00ED, Kh\u00E1ch h\u00E0ng)';
+    displayName: 'B\u00E0i vi\u1EBFt chi ti\u1EBFt - V\u01B0\u1EDDn k\u1EF9 n\u0103ng, Hu\u1EA5n luy\u1EC7n c\u00E1 nh\u00E2n, B\u00E1o ch\u00ED, Kh\u00E1ch h\u00E0ng';
     pluralName: 'newspapers';
     singularName: 'newspaper';
   };
@@ -844,7 +844,7 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
     description: '';
-    displayName: 'Testimonial (Chia s\u1EBD c\u1EE7a ph\u1EE5 huynh)';
+    displayName: 'Chia s\u1EBD c\u1EE7a ph\u1EE5 huynh';
     pluralName: 'testimonials';
     singularName: 'testimonial';
   };

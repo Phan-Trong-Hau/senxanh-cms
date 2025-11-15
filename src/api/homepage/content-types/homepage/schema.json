@@ -4,42 +4,43 @@
   "info": {
     "singularName": "homepage",
     "pluralName": "homepages",
-    "displayName": "Homepage (Trang chủ)",
+    "displayName": "Trang chủ",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "heroBanner": {
       "type": "component",
-      "repeatable": false,
-      "component": "homepage.hero-banner"
+      "component": "homepage.hero-banner",
+      "repeatable": false
     },
     "aboutUs": {
       "type": "component",
-      "repeatable": false,
-      "component": "homepage.about-us-section"
+      "component": "homepage.about-us-section",
+      "repeatable": false
     },
     "favoriteCourses": {
       "type": "component",
-      "repeatable": false,
-      "component": "homepage.courses-section"
+      "component": "homepage.courses-section",
+      "repeatable": false
     },
     "FAQsSection": {
       "type": "component",
-      "repeatable": false,
-      "component": "homepage.fa-qs-section"
+      "component": "homepage.fa-qs-section",
+      "repeatable": false
     },
     "CTASection": {
       "type": "component",
-      "repeatable": false,
-      "component": "homepage.cta-section"
+      "component": "homepage.cta-section",
+      "repeatable": false
     },
     "articles": {
       "type": "component",
-      "repeatable": true,
-      "component": "homepage.articles"
+      "component": "homepage.articles",
+      "repeatable": true
     }
   }
 }
