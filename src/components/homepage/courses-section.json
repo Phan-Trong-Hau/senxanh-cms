@@ -12,9 +12,9 @@
       "type": "string"
     },
     "courses": {
-      "type": "component",
-      "repeatable": true,
-      "component": "homepage.courses"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course"
     }
   }
 }

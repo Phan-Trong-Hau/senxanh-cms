@@ -180,7 +180,7 @@ export interface HomepageCoursesSection extends Struct.ComponentSchema {
     displayName: 'Courses Section';
   };
   attributes: {
-    courses: Schema.Attribute.Component<'homepage.courses', true>;
+    courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     highlightTitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
